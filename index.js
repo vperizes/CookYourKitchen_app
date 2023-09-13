@@ -28,7 +28,8 @@ app.post("/", async (req, res) => {
         });
         const result = response.data;
         res.render("index.ejs", {
-            recipes: result
+            recipes: result,
+            userInput: inputText,
         });
     }catch(error){
         res.render("index.ejs", {
