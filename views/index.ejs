@@ -8,7 +8,6 @@
     <link rel="stylesheet" type="text/css" href="styles/main.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-
 </head>
 
 <body>
@@ -20,13 +19,12 @@
                     Those veggies about to go bad?? <br>
                     Enter the ingrediants you want to use and get recipe suggestions!
                 </p>
-                <form action="/" method="post">
+                <form action="/search" method="post">
                     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
                         <input type="text" id="search" name="ingrediants" class="form-control"
                             placeholder="Chicken, beans, tomato,..." aria-label="Recipient's username"
                             aria-describedby="button-addon2">
-                        <button class="btn btn-outline-secondary" type="submit" value="Submit" id="button-addon2">Get a
-                            recipe</button>
+                        <button class="btn btn-outline-secondary" type="submit" value="Submit" id="button-addon2">Get a recipe</button>
                     </div>
                 </form>
 
@@ -38,7 +36,7 @@
         <div class="container px-4 py-5" id="custom-cards">
             <h2>You searched for: <%= userInput %>
             </h2>
-            <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+            <div id="recipe-list" class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
                 <% recipes.hits.forEach(recipe=> { %>
                     <div class="col" onclick="location.href='<%= recipe.recipe.url %>';">
                         <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4"
@@ -75,6 +73,16 @@
             </div>
         </div>
 
+      <% if (locals.nextPageUrl){ %>
+        <div class="text-center mb-4">
+            <button type="button" class="btn btn-light" id="loadMoreButton" data-next-page="<%= nextPageUrl %>">Load More</button>
+        </div>
+      <% } %>
+        
+      
+       <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
+       crossorigin="anonymous"></script>
+        <script src="loadrecipes.js"></script>
 </body>
 
 </html>

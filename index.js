@@ -12,14 +12,18 @@ const myAPIKey = process.env.API_KEY;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
+let nextPageUrl = null;
+
 app.get("/", (req, res) => {
     res.render("index.ejs");
 })
 
-app.post("/", async (req, res) => {
+app.post("/search", async (req, res) => {
     const inputText = req.body.ingrediants;
     try{
-        const response = await axios.get(API_URL, {
+        const requestUrl = nextPageUrl || API_URL;
+
+        const response = await axios.get(requestUrl, {
             params: {
                 q: inputText,
                 app_id: myId,
@@ -27,9 +31,18 @@ app.post("/", async (req, res) => {
             }
         });
         const result = response.data;
+
+        //store next page url for pagination
+        if(result._links.next.href){
+            nextPageUrl = result._links.next.href;
+        } else{
+            nextPageUrl = null; //no more pages/recipes given the user search
+        }
+
         res.render("index.ejs", {
             recipes: result,
             userInput: inputText,
+            nextPageUrl: nextPageUrl
         });
     }catch(error){
         res.render("index.ejs", {
@@ -38,6 +51,7 @@ app.post("/", async (req, res) => {
 
     }
 })
+
 
 app.listen(port, () => {
     console.log(`Server listening on port ${port}.`);
