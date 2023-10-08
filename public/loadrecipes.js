@@ -5,6 +5,8 @@ $("#loadMoreButton").on("click", (event) => {
     event.preventDefault();
     event.stopPropagation(); 
 
+    let dietLabel = "";
+
 //using ajax to load more recipes
     if (nextPageUrl) {
         $.ajax({
@@ -16,6 +18,15 @@ $("#loadMoreButton").on("click", (event) => {
                 const moreRecipes = result.hits;
                 if(moreRecipes.length > 0){
                     moreRecipes.forEach((recipe) => {
+                        if(recipe.recipe.dietLabels.length > 0){
+                            dietLabel = `
+                            <li class="badge text-bg-dark rounded-pill px-2">
+                                            <small>
+                                                ${recipe.recipe.dietLabels[0]}
+                                            </small>
+                                        </li>
+                            `;
+                        }
                         //copying card html/ejs from index.ejs and replacing ejs tags for each additionally retrieved recipe
                         const recipeCard = `
                         <div class="col" onclick="location.href='${recipe.recipe.url}';">
@@ -26,14 +37,7 @@ $("#loadMoreButton").on("click", (event) => {
                                     ${recipe.recipe.label}
                                 </h3>
                                 <ul class="d-flex list-unstyled mt-auto">
-                                    <% if (${recipe.recipe.dietLabels.length} > 0) { %>
-                                        <li class="badge text-bg-dark rounded-pill px-2">
-                                            <small>
-                                                ${recipe.recipe.dietLabels[0]}
-                                            </small>
-                                        </li>
-                                        <%} %>
-
+                                             ${dietLabel}
                                             <li class="badge text-bg-dark rounded-pill mx-2 px-2">
                                                 <small>
                                                     ${recipe.recipe.healthLabels[0]}
@@ -41,7 +45,7 @@ $("#loadMoreButton").on("click", (event) => {
                                             </li>
                                             <li class="badge text-bg-dark rounded-pill px-2">
                                                 <small>
-                                                    ${recipe.recipe.healthLabels[0]}
+                                                    ${recipe.recipe.healthLabels[1]}
                                                 </small>
                                             </li>
 
