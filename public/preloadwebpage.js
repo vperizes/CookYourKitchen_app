@@ -2,7 +2,7 @@
 // Function to check if the service is up using async/await
 async function isServiceUp() {
     try {
-      const response = await fetch("/"); 
+      const response = await fetch("https://cookyourkitchen.onrender.com/"); 
       console.log(response);
 
       //check if response was successful (status in 200-299 range)
