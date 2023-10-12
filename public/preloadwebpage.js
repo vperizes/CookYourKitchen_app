@@ -17,8 +17,9 @@ async function isServiceUp() {
     }
   }
 
-$(document).ready( () => {
-    if(isServiceUp){
+$(document).ready( async () => {
+  var isUp = await isServiceUp();
+    if(isUp){
         $("#loader").fadeOut(1000);
         $("#content").fadeIn(1000);
     } else {
