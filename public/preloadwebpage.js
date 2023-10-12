@@ -5,12 +5,6 @@ async function isServiceUp() {
       const response = await fetch("https://cookyourkitchen.onrender.com"); 
       console.log(response);
 
-      //check if response was successful (status in 200-299 range)
-      if (response.ok) {
-        return true; // Service is up
-      } else {
-        return false; // Service is down
-      }
     } catch (error) {
       console.error('Error checking service status:', error);
       return false; // Service is down or unreachable
