@@ -23,6 +23,6 @@ async function isServiceUp() {
 
   } catch (error) {
     console.error('Error checking service status:', error);
-    //return false; // Service is down (due to error)
+    return false; // Service is down (due to error)
   }
 }
