@@ -2,7 +2,7 @@ body{
     background-color: #2F2F2F;
 }
 
-h1, p{
+h1, h2, p{
     color: #FDE4C3;
 }
 
@@ -24,6 +24,7 @@ input{
 
 .card{
     background-size: 100%;
+    border-color: #FDE4C3;
 }
 
 .text-bg{
