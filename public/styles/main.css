@@ -1,3 +1,22 @@
+body{
+    background-color: #2F2F2F;
+}
+
+h1, p{
+    color: #FDE4C3;
+}
+
+input{
+    width: 70%;
+}
+
+.btn{
+    color: #FDE4C3;
+    border-color: #FDE4C3;
+    width: 30%;
+    font-size: 20px;
+}
+
 .card{
     background-size: 100%;
 }
@@ -21,7 +40,6 @@
     justify-content: center;
     align-items: center;
     background-color: gray ;
-    transition: opacity 0.75s, visibility 0.75s;
 }
 
 /* adding the spinner using ::after */
@@ -29,7 +47,7 @@
     margin-top: 10px;
     width: 75px;
     height: 75px;
-    border: 15px solid #dddddd;
+    border: 10px solid #dddddd;
     border-top-color: purple;
     border-radius: 50%;
     animation: loading 1s ease infinite;
@@ -39,3 +57,4 @@
     0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+

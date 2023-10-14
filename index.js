@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
 })
 
 app.post("/search", async (req, res) => {
-    const inputText = req.body.ingrediants;
+    const inputText = req.body.ingredients;
     try{
         const requestUrl = nextPageUrl || API_URL;
 
