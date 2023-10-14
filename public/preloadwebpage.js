@@ -33,7 +33,8 @@ $(document).ready(async () => {
   // }, 1000); 
 
   if (isUp) {
-    $("#loader").hide();
+    $("#loader").fadeOut(1000);
+    $("#content").fadeIn(1000);
   } else {
     $("#loader").show();
   }
