@@ -1,6 +1,13 @@
+html{
+    height: 100%;
+}
+
 body{
     background-color: #26543e;
     background-image: url("https://www.transparenttextures.com/patterns/basketball.png");
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 10rem;
 }
 
 h1, h2, p{
@@ -65,11 +72,14 @@ input{
 }
 
 footer{
-    position: relative;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     align-content: flex-end;
 }
 
