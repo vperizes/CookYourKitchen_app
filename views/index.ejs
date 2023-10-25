@@ -16,7 +16,7 @@
         <div id="spinner" class="spinner"></div>
     </div>
 
-    <div id="content" class="container">
+    <div id="content" class="container-md">
         <div class="px-4 py-5 my-4 text-center">
             <h1 class="display-5 fw-bold">Cook Your Kitchen</h1>
             <div class="col-lg-6 mx-auto">
@@ -51,7 +51,7 @@
                                     <%= recipe.recipe.label %>
                                 </h3>
                                 <ul class="d-flex list-unstyled mt-auto">
-                                    <% if (recipe.recipe.dietLabels.length > 0) { %>
+                                    <% if (recipe.recipe.dietLabels.length> 0) { %>
                                         <li class="badge text-bg-dark rounded-pill px-2">
                                             <small>
                                                 <%= recipe.recipe.dietLabels[0]%>
@@ -78,17 +78,18 @@
             </div>
         </div>
 
-      <% if (locals.nextPageUrl){ %>
-        <div class="text-center mb-4">
-            <button type="button" class="btn" id="loadMoreButton" data-next-page="<%= nextPageUrl %>">Load More</button>
-        </div>
-      <% } %>
-        
-      
-       <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
-       crossorigin="anonymous"></script>
-       <script src="preloadwebpage.js"></script>
-       <script src="loadrecipes.js"></script>
+        <% if (locals.nextPageUrl){ %>
+            <div class="text-center mb-4">
+                <button type="button" class="btn" id="loadMoreButton" data-next-page="<%= nextPageUrl %>">Load
+                    More</button>
+            </div>
+            <% } %>
+
+
+                <script src="https://code.jquery.com/jquery-3.7.1.js"
+                    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+                <script src="preloadwebpage.js"></script>
+                <script src="loadrecipes.js"></script>
 </body>
 
 </html>
