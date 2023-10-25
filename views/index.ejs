@@ -16,7 +16,7 @@
         <div id="spinner" class="spinner"></div>
     </div>
 
-    <div id="content" class="container-md">
+    <div id="content" class="container">
         <div class="px-4 py-5 my-4 text-center">
             <h1 class="display-5 fw-bold">Cook Your Kitchen</h1>
             <div class="col-lg-6 mx-auto">
@@ -25,7 +25,7 @@
                     Enter the ingredients you want to use and get recipe suggestions!
                 </p>
                 <form action="/search" method="post">
-                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center input-group input-group-lg">
                         <input type="text" id="search" name="ingredients" class="form-control"
                             placeholder="Chicken, beans, tomato,..." aria-label="Recipient's username"
                             aria-describedby="button-addon2">
@@ -91,5 +91,7 @@
                 <script src="preloadwebpage.js"></script>
                 <script src="loadrecipes.js"></script>
 </body>
+
+<%- include("partials/footer.ejs") %>
 
 </html>
