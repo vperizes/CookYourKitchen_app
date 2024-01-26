@@ -1,5 +1,5 @@
-Recipe finder web app. 
-Have random ingrediants in your kitchen that you want to cook? Search for those ingrediants and get recipes!
+Cook your Kitchen is a recipe finder web app that is powered by Edamam's recipe search API. 
+As someone that loves cooking but also prioritizes shopping for seasonal foods I often find myself needing a little inspiration when it comes to combining random ingredients. Cook your Kitchen was my personal solution to that problem. 
 
 Added feautres (Sept 26): -Pagination. Added load more button to retrieve more results. 
 
