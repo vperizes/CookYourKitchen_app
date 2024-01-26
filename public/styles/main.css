@@ -1,92 +1,101 @@
-html{
-    height: 100%;
+html {
+  height: 100%;
 }
 
-body{
-    background-color: #26543e;
-    background-image: url("https://www.transparenttextures.com/patterns/basketball.png");
-    position: relative;
-    min-height: 100%;
-    padding-bottom: 10rem;
+body {
+  background-color: #26543e;
+  background-image: url("https://www.transparenttextures.com/patterns/basketball.png");
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 10rem;
 }
 
-h1, h2, p{
-    color: #FDE4C3;
+a:link {
+  color: transparent;
 }
 
-input{
-    width: 70%;
+h1,
+h2,
+p {
+  color: #fde4c3;
 }
 
-.btn{
-    color: #FDE4C3;
-    border-color: #FDE4C3;
-    font-size: 20px;
+input {
+  width: 70%;
 }
 
-.btn:hover{
-    color: #2F2F2F;
-    background-color: #FDE4C3;
+.btn {
+  color: #fde4c3;
+  border-color: #fde4c3;
+  font-size: 20px;
 }
 
-.card{
-    background-size: 100%;
-    border-color: #FDE4C3;
+.btn:hover {
+  color: #2f2f2f;
+  background-color: #fde4c3;
 }
 
-.text-bg{
-    background-color: rgba(0, 0, 0, 0.4);
+.card {
+  background-size: 100%;
+  border-color: #fde4c3;
 }
 
-#content{
-    display: none;
+.text-bg {
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
-.loader{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: gray ;
+#content {
+  display: none;
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: gray;
 }
 
 /* adding the spinner using ::after */
-.spinner{
-    margin-top: 10px;
-    width: 75px;
-    height: 75px;
-    border: 10px solid #dddddd;
-    border-top-color: purple;
-    border-radius: 50%;
-    animation: loading 1s ease infinite;
+.spinner {
+  margin-top: 10px;
+  width: 75px;
+  height: 75px;
+  border: 10px solid #dddddd;
+  border-top-color: purple;
+  border-radius: 50%;
+  animation: loading 1s ease infinite;
 }
 
 @keyframes loading {
-    0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-footer{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-content: flex-end;
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-end;
 }
 
-#edamam-badge{
-    border-bottom: 2px solid #FDE4C3;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+#edamam-badge {
+  border-bottom: 2px solid #fde4c3;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
-
