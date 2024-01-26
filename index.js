@@ -14,9 +14,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 let nextPageUrl = null;
+const year = new Date().getFullYear();
 
 app.get("/", (req, res) => {
-  res.render("index.ejs");
+  res.render("index.ejs", {
+    year: year,
+  });
 });
 
 app.post("/search", async (req, res) => {
@@ -44,6 +47,7 @@ app.post("/search", async (req, res) => {
       recipes: result,
       userInput: inputText,
       nextPageUrl: nextPageUrl,
+      year: year,
     });
   } catch (error) {
     res.render("index.ejs", {
