@@ -3,7 +3,7 @@ import https from "https";
 //code to make request to render.com (keep server from spinning down)
 export const makeRequest = () => {
   // Replace 'example.com' with the actual domain of the website you want to ping
-  const url = "https://careercompass-0z1a.onrender.com/";
+  const url = "https://cookyourkitchen.onrender.com";
 
   try {
     https
