@@ -2,7 +2,7 @@ import express from "express";
 import axios from "axios";
 import bodyParser from "body-parser";
 import "dotenv/config";
-import { makeRequest } from "./avoidSpinDown.js";
+import { makeRequest } from "./public/avoidSpinDown.js";
 
 const app = express();
 const port = 3000;
